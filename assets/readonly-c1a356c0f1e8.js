@@ -4534,7 +4534,7 @@ pe.useEffect(()=>{if(!album)return;const key=ev=>{if(ev.key==='Escape')setAlbum(
 const share=async()=>{try{if(navigator.share)await navigator.share({title:'圣诞回忆 · Merry Christmas',url:location.href});else{await navigator.clipboard.writeText(location.href);setNotice('分享链接已复制')}}catch(err){if(err.name!=='AbortError')setNotice('请复制浏览器地址栏中的链接分享')}},btn=(label,click,active=false)=>re.jsx('button',{type:'button',onClick:click,className:'view-button'+(active?' active':''),children:label});
 return re.jsxs('div',{className:'w-full h-screen text-white overflow-hidden relative',style:{background:ku.bg},children:[
 re.jsxs('header',{className:'view-heading',children:[re.jsx('p',{children:'A LITTLE CHRISTMAS MEMORY'}),re.jsx('h1',{children:'Merry Christmas'}),re.jsx('span',{children:'愿今夜的星光，落在你身旁。'})]}),
-re.jsxs('nav',{className:'view-controls','aria-label':'观看控制',children:[btn(r===ls.TREE?'绽放星光':'回到树形',()=>e(r===ls.TREE?ls.FLOAT:ls.TREE)),btn('查看相册',()=>setAlbum(true)),btn(t?'暂停音乐':'播放音乐',()=>i(!t)),btn(g?'关闭手势':'开启手势',()=>v(!g)),btn('分享',share)]}),
+re.jsxs('nav',{className:'view-controls','aria-label':'观看控制',children:[btn(r===ls.TREE?'绽放星光':'回到树形',()=>e(r===ls.TREE?ls.FLOAT:ls.TREE)),btn(t?'暂停音乐':'播放音乐',()=>i(!t)),btn(g?'关闭手势':'开启手势',()=>v(!g)),btn('分享',share)]}),
 notice&&re.jsx('p',{className:'view-notice',role:'status',onClick:()=>setNotice(''),children:notice}),
 re.jsx(Vz,{isPlaying:t,audioUrl:nB,onAudioUpdate:O,onAutoplayBlocked:()=>setBlocked(true)}),g&&re.jsx(Hz,{onHandUpdate:F,showCamera:true}),
 re.jsx(pe.Suspense,{fallback:re.jsx('div',{className:'view-loading',children:'正在点亮圣诞树…'}),children:re.jsx(ez,{mode:r,audioData:P,handData:z,config:B,images:XP})}),
